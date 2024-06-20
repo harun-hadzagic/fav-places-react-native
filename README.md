@@ -1,1 +1,0 @@
-# fav-places-react-native
