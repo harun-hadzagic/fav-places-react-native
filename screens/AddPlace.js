@@ -1,8 +1,13 @@
-import PlaceForm from "../components/places/PlaceForm"
+import PlaceForm from "../components/places/PlaceForm";
 
-const AddPlace = () =>{
+const AddPlace = ({ navigation }) => {
+  const createPlaceHandler = (place) => {
+    navigation.navigate("AllPlaces", {
+      place,
+    });
+  };
 
-    return <PlaceForm/>
-}
+  return <PlaceForm onCreatePlace={createPlaceHandler} />;
+};
 
-export default AddPlace
+export default AddPlace;

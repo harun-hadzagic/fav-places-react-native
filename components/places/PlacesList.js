@@ -6,7 +6,9 @@ const PlacesList = ({ places }) => {
   if (!places || places.length === 0) {
     return (
       <View style={styles.fallbackContainer}>
-        <Text style={styles.fallbackText}>No places added yet - start adding some!</Text>
+        <Text style={styles.fallbackText}>
+          No places added yet - start adding some!
+        </Text>
       </View>
     );
   }
@@ -14,9 +16,7 @@ const PlacesList = ({ places }) => {
     <FlatList
       data={places}
       keyExtractor={(item) => item.id}
-      renderItem={(item) => {
-        <PlaceItem place={item} />;
-      }}
+      renderItem={({item}) => <PlaceItem place={item} />}
     />
   );
 };
@@ -31,6 +31,6 @@ const styles = StyleSheet.create({
   },
   fallbackText: {
     fontSize: 16,
-    color: Colors.primary200
+    color: Colors.primary200,
   },
 });
