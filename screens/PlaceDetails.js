@@ -11,7 +11,6 @@ const PlaceDetails = ({route,navigation}) =>{
             initalLat: lat,
             initalLng: lng
         })
-        console.log(lat, lng)
     }
     return <ScrollView>
         <Image style={styles.image} source={{ uri: route.params.imageUri }}/>
