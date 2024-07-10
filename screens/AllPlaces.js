@@ -6,7 +6,11 @@ const AllPlaces = ({ route }) => {
   const [loadedPlaces, setLoadedPlaces] = useState([]);
   const isFocues = useIsFocused();
   useEffect(() => {
-    if (isFocues && route.params) {
+    if (isFocues && route.params?.isAdding) {
+      console.log(route.params.isAdding)
+      route.params.isAdding = false;
+      console.log(route.params.isAdding)
+
       setLoadedPlaces((curPlaces) => [...curPlaces, route.params.place]);
     }
   }, [isFocues, route]);
